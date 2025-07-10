@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Interactive Motherboard and BIOS Simulation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="Style.css" rel="Stylesheet"/>
+</head>
+
+<body>
+
+ 
+  <div id="motherboardView">
+    <h1>MOTHERBOARD</h1>
+    <div class="components">
+   <div class="component" id="cpu" data-label="CPU" data-open="false" onclick="showCPUInfo()">CPU</div>
+<div class="component" id="ram" data-label="RAM" data-open="false" onclick="showRAMInfo()">RAM</div>
+<div class="component" id="rom" data-label="ROM" data-open="false" onclick="showROMInfo()">ROM</div>
+<div class="component" id="Storage" data-label="Storage Drive" data-open="false" onclick="showStorageInfo()">Storage Drive</div>
+<div class="component" id="power" data-label="Power Unit" data-open="false" onclick="showPowerUnitInfo()">Power Unit</div>
+</div>
+    <button onclick="switchToBIOS()">Switch to BIOS</button>
+  </div>
+
+
+  <div id="biosScreen">
+    <h2>BIOS SCREEN</h2>
+
+    <div class="section">
+      <div class="section-title">BIOS Version</div>
+      <p>American Megatrends v2.22.1271</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">CMOS Clock</div>
+      <p id="clock">Loading...</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Boot Order</div>
+      <ol class="lists">
+        <li>USB: Kingston DataTraveler</li>
+        <li>SSD: Samsung EVO 1TB</li>
+        <li>DVD: ASUS DRW-24B1ST</li>
+        <li>Network Boot</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Security</div>
+      <p>
+        Admin Password: <span onclick="toggle(this)">OFF</span><br>
+        Secure Boot: <span onclick="toggle(this)">ON</span>
+      </p>
+    </div>
+
+    <div class="section">
+      <p><strong>Press F10 to Save and Exit</strong></p>
+    </div>
+    <button onclick="SwitchToMotherboard()">Switch to Motherboard</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
