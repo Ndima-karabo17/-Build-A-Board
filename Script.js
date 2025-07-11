@@ -50,21 +50,16 @@ function showPowerUnitInfo() {
 function switchToBIOS() {
   document.getElementById("motherboardView").style.display = "none";
   document.getElementById("biosScreen").style.display = "block";
-  updateClock();
+
 }
 
 function toggle(element) {
   element.textContent = element.textContent === "ON" ? "OFF" : "ON";
 }
 
-function updateClock() {
-  const now = new Date();
-  const timeString = now.toLocaleTimeString();
-  document.getElementById("clock").textContent = timeString;
-  setTimeout(updateClock, 1000);
-}
+
 function SwitchToMotherboard() {
   document.getElementById("biosScreen").style.display = "none";
   document.getElementById("motherboardView").style.display = "block";
-  updateClock();
+ 
 }
